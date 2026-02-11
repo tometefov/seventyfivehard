@@ -23,7 +23,7 @@ jobs:
       # ---------- Backend ----------
       - name: Build backend image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/75hard-backend ./backend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/75hard-backend ./seventyfivehard
 
       - name: Push backend image
         run: |
@@ -32,7 +32,7 @@ jobs:
       # ---------- Frontend ----------
       - name: Build frontend image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/75hard-frontend ./frontend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/75hard-frontend ./seventyfive-frontend
 
       - name: Push frontend image
         run: |
