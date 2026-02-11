@@ -1,0 +1,8 @@
+mk\finki\seventyfivehard\model\TaskType.class
+mk\finki\seventyfivehard\config\DataInitializer.class
+mk\finki\seventyfivehard\controller\HealthController.class
+mk\finki\seventyfivehard\model\DailyTask.class
+mk\finki\seventyfivehard\repository\DailyTaskRepository.class
+mk\finki\seventyfivehard\controller\DailyTaskController.class
+mk\finki\seventyfivehard\controller\StatusController.class
+mk\finki\seventyfivehard\SeventyfivehardApplication.class

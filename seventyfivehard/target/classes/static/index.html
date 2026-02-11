@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>75Hard Tracker</title>
+</head>
+<body>
+<h1>75Hard – Daily Tasks</h1>
+<ul id="tasks"></ul>
+
+<script>
+    async function loadTasks() {
+        const res = await fetch('/api/tasks');
+        const tasks = await res.json();
+
+        const ul = document.getElementById('tasks');
+        ul.innerHTML = '';
+
+        tasks.forEach(t => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+            <input type="checkbox" ${t.completed ? 'checked' : ''}
+                   onclick="toggleTask(${t.id})">
+            ${t.name}
+        `;
+            ul.appendChild(li);
+        });
+    }
+
+    async function toggleTask(id) {
+        await fetch(`/api/tasks/${id}/toggle`, { method: 'PUT' });
+        loadTasks();
+    }
+
+    loadTasks();
+</script>
+</body>
+</html>
